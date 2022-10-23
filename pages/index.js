@@ -75,8 +75,8 @@ export default function Home({ countryOptions }) {
               <label>Stay duration</label>
               <input className='w-full bg-[#13334C] border-2 rounded-md py-[.2rem] px-[.6rem]' onChange={event => setStayDuration(event.target.value)} type="text" />
             </div> */}
-            <div className='flex flex-col justify-center gap-[.5rem]'>
-              <label className='text-white'>Job type</label>
+            <div className='flex flex-col justify-center gap-[.5rem] text-white'>
+              <label className=''>Job type</label>
               <input className='w-[12.5vw] bg-[#13334C] border-2 rounded-md py-[.2rem] px-[.6rem]' onChange={event => setJobType(event.target.value)} type="text" />
             </div>
             <div className='flex flex-col justify-center gap-[.5rem] text-white'>
