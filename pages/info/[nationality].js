@@ -11,18 +11,19 @@ export default function InformationPage({ relationshipData }) {
 
     const records = []
 
-    useEffect(() => {
-        console.log(relationshipData)
-    }, [])
-
     return (
         <div>
             <NavBar />
-            <div className='h-[25vh] w-full flex justify-center flex-col bg-[url("/infoPage.png")] bg-no-repeat bg-cover bg-center'></div>
-            <div className='flex flex-row gap-[2vw] self-center w-[50%] text-black'>
-                <h1 className='text-[4vh] lg:text-[3rem] lg:w-[20%]'>{nationality}</h1>
-                <div ><img src={'/next.png'} alt="to" className="img-responsive w-[4vh] justify-center align-center"/></div>
-                <h1 className='text-[4vh] lg:text-[3rem] lg:w-[20%]'>{destination}</h1>
+            <div className='h-[35vh] w-full bg-[url("/infoPage.png")] bg-no-repeat bg-cover bg-center'></div>
+            <div className='flex flex-row items-center justify-center gap-[2vw] w-full text-black py-[2vw]'>
+                <h1 className='text-[4vh] text-center lg:text-[3rem] lg:w-[20%]'>{nationality}</h1>
+                <div>
+                    <img src={'/next.png'} alt="to" className="img-responsive w-[4vh] justify-center align-center" />
+                </div>
+                <h1 className='text-[4vh] text-center lg:text-[3rem] lg:w-[20%]'>{destination}</h1>
+            </div>
+            <div className="px-[2vw] py-[2vw] min-h-screen w-full">
+                
             </div>
             <Footer />
         </div>
@@ -31,10 +32,10 @@ export default function InformationPage({ relationshipData }) {
 
 export async function getServerSideProps(context) {
     const { nationality, destination, jobType } = context.query
-    console.log(nationality, destination, jobType)
+    // console.log(nationality, destination, jobType)
 
     const relationshipData = relationship.find(rel => rel["Country A"] === nationality && rel["Country B"] === destination)
-    
+
     return {
         props: { relationshipData }
     }
