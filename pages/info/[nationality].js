@@ -43,7 +43,10 @@ export default function InformationPage({ relationshipData }) {
                         <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
-                <div className="col-span-4 flex flex-col gap-[5vw] w-full" >
+                <div className="col-span-4 flex flex-col w-full" >
+                    <Comment className="w-full" name="ss" time="ssss" />
+                    <Comment className="w-full" name="ss" time="ssss" />
+                    <Comment className="w-full" name="ss" time="ssss" />
                     <Comment className="w-full" name="ss" time="ssss" />
                 </div>
             </div>
