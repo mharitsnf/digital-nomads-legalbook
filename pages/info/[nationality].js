@@ -18,7 +18,12 @@ export default function InformationPage({ relationshipData }) {
     return (
         <div>
             <NavBar />
-
+            <div className='h-[25vh] w-full flex justify-center flex-col bg-[url("/infoPage.png")] bg-no-repeat bg-cover bg-center'></div>
+            <div className='flex flex-row gap-[2vw] self-center w-[50%] text-black'>
+                <h1 className='text-[4vh] lg:text-[3rem] lg:w-[20%]'>{nationality}</h1>
+                <div ><img src={'/next.png'} alt="to" className="img-responsive w-[4vh] justify-center align-center"/></div>
+                <h1 className='text-[4vh] lg:text-[3rem] lg:w-[20%]'>{destination}</h1>
+            </div>
             <Footer />
         </div>
     )
