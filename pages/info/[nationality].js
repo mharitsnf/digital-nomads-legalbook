@@ -44,7 +44,7 @@ export default function InformationPage({ relationshipData }) {
                     </div>
                 </div>
                 <div className="col-span-4 flex flex-col gap-[5vw] w-full" >
-                    <Comment className="w-full" />
+                    <Comment className="w-full" name="ss" time="ssss" />
                 </div>
             </div>
             <Footer />
