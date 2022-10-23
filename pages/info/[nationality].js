@@ -4,10 +4,16 @@ import { relationship } from "../../data/data"
 import * as _ from "lodash"
 import NavBar from "../../components/navbar"
 import Footer from "../../components/footer"
-
+import Comment from "../../components/comment"
 export default function InformationPage({ relationshipData }) {
     const router = useRouter()
     const { nationality, destination, jobType } = router.query
+    const styles = {
+        rectangle: {
+            width: '50px',
+            height: '50px',
+        }
+    }
 
     const records = []
 
@@ -36,6 +42,9 @@ export default function InformationPage({ relationshipData }) {
                         <h1 className="lg:text-[1.5vw]">Taxation</h1>
                         <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
                     </div>
+                </div>
+                <div className="col-span-4 flex flex-col gap-[5vw] w-full" >
+                    <Comment className="w-full" />
                 </div>
             </div>
             <Footer />
