@@ -22,8 +22,21 @@ export default function InformationPage({ relationshipData }) {
                 </div>
                 <h1 className='text-[4vh] text-center lg:text-[3rem] lg:w-[20%]'>{destination}</h1>
             </div>
-            <div className="px-[2vw] py-[2vw] min-h-screen w-full">
-                
+            <div className="px-[10vw] py-[2vw] min-h-[35vw] w-full w-full grid grid-cols-12 gap-[1rem]">
+                <div className="col-span-8 flex flex-col gap-[5vw]">
+                    <div className="flex flex-col">
+                        <h1 className="lg:text-[1.5vw]">{destination}</h1>
+                        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div className="flex flex-col">
+                        <h1 className="lg:text-[1.5vw]">Digital Nomad Visa</h1>
+                        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div className="flex flex-col">
+                        <h1 className="lg:text-[1.5vw]">Taxation</h1>
+                        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
             </div>
             <Footer />
         </div>
