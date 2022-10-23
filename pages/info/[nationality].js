@@ -5,6 +5,7 @@ import * as _ from "lodash"
 import NavBar from "../../components/navbar"
 import Footer from "../../components/footer"
 import Comment from "../../components/comment"
+import Consultant from "../../components/consultant"
 export default function InformationPage({ relationshipData }) {
     const router = useRouter()
     const { nationality, destination, jobType } = router.query
@@ -29,7 +30,7 @@ export default function InformationPage({ relationshipData }) {
                 <h1 className='text-[4vh] text-center lg:text-[3rem] lg:w-[20%]'>{destination}</h1>
             </div>
             <div className="px-[10vw] py-[2vw] min-h-[35vw] w-full w-full grid grid-cols-12 gap-[1rem]">
-                <div className="col-span-8 flex flex-col gap-[5vw]">
+                <div className="col-span-9 flex flex-col gap-[5vw]">
                     <div className="flex flex-col">
                         <h1 className="lg:text-[1.5vw]">{destination}</h1>
                         <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
@@ -41,13 +42,37 @@ export default function InformationPage({ relationshipData }) {
                     <div className="flex flex-col">
                         <h1 className="lg:text-[1.5vw]">Taxation</h1>
                         <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                        <div className="h-[25vh] w-auto flex flex-col w-full rounded-md border-2 m-5 ">
+                            <div className="flex flex-row my-2 mx-4 justify-between">
+                                <p className="font-semibold">Consultants</p>
+                                <p className="font-semibold underline text-blue-500">more</p>
+                            </div>
+                            <div className="flex flex-row justify-between pl-10 pr-10 pt-3 pb-3 h-full">
+                                <Consultant className="h-full" img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                                <Consultant img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                                <Consultant img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                                <Consultant img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                                <Consultant img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div className="col-span-4 flex flex-col w-full" >
+                <div className="col-span-3 flex flex-col w-full rounded-md border-2 gap-[1vh]" >
+                    <p className="pl-3 pt-1.5 font-semibold">Comments</p>
+                    <Comment className="w-full" img='/next.png' name="ss" time="ssss" />
                     <Comment className="w-full" name="ss" time="ssss" />
                     <Comment className="w-full" name="ss" time="ssss" />
                     <Comment className="w-full" name="ss" time="ssss" />
-                    <Comment className="w-full" name="ss" time="ssss" />
+                    <div className="grid grid-cols-4 mt-auto  h-[5vh] w-full">
+                        <div className="col-span-3 m-1">
+                            <input className='w-full border-2 rounded-md h-full pl-2' placeholder="Leave a comment..." type="text" />
+                        </div>
+                        <div className="col-span-1 m-1">
+                            <button className='w-full bg-[#FD5F00] text-white font-medium h-full rounded-md border-2 border-black'>Send</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
             <Footer />
