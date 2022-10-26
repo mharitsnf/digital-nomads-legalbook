@@ -30,8 +30,8 @@ export default function InformationPage({ relationshipData }) {
                 </div>
                 <h1 className='text-[4vh] text-center lg:text-[3rem] lg:w-[20%]'>{destination}</h1>
             </div>
-            <div className="px-[10vw] py-[2vw] min-h-[35vw] w-full w-full grid grid-cols-12 gap-[1rem]">
-                <div className="col-span-9 flex flex-col gap-[3vh]">
+            <div className="px-[10vw] py-[2vw] min-h-[35vw] w-full w-full grid grid-cols-12 gap-[5vw]">
+                <div className="col-span-9 flex flex-col gap-[5vh]">
                     <div className="flex flex-col">
                         <h1 className="lg:text-[1.5vw] font-semibold">{destination}</h1>
                         <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet L ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsumorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
@@ -40,10 +40,12 @@ export default function InformationPage({ relationshipData }) {
                         <h1 className="lg:text-[1.5vw] font-semibold">Digital Nomad Visa</h1>
                         <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
                     </div>
-                    <div className="flex flex-col">
-                        <h1 className="lg:text-[1.5vw] font-semibold">Taxation</h1>
-                        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                        <div className="h-[25vh] w-auto flex flex-col w-full rounded-md border-2 m-5 ">
+                    <div className="flex flex-col gap-[5vh]">
+                        <div>
+                            <h1 className="lg:text-[1.5vw] font-semibold">Taxation</h1>
+                            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                        </div>
+                        <div className="h-[25vh] w-auto flex flex-col w-full rounded-md border-2 m-5">
                             <div className="flex flex-row my-2 mx-4 justify-between">
                                 <p className="font-semibold">Consultants</p>
                                 <p className="font-semibold underline text-blue-500">more</p>
@@ -60,21 +62,21 @@ export default function InformationPage({ relationshipData }) {
                     <div className="flex flex-col">
                         <h1 className="lg:text-[1.5vw] font-semibold">Other countries recommended to you</h1>
                         <div className="grid grid-cols-4 gap-4 mt-5 px-10">
-                        <Recommendation img='/Denmark.jpg' name="Denmark" description="Also nordic country" />
-                        <Recommendation img='/Denmark.jpg' name="mike" description="sss" />
-                        <Recommendation img='/Denmark.jpg' name="mike" description="sss" />
-                        <Recommendation img='/Denmark.jpg' name="mike" description="sss" />
-                        <Recommendation img='/Denmark.jpg' name="mike" description="sss" />
+                            <Recommendation img='/Denmark.jpg' name="Denmark" description="Also nordic country" />
+                            <Recommendation img='/Denmark.jpg' name="Norway" description="sss" />
+                            <Recommendation img='/Denmark.jpg' name="Finland" description="sss" />
+                            <Recommendation img='/Denmark.jpg' name="Estonia" description="sss" />
+                            <Recommendation img='/Denmark.jpg' name="Hungary" description="sss" />
 
                         </div>
                     </div>
                 </div>
-                <div className="col-span-3 flex flex-col w-full rounded-md border-2 gap-[1vh]" >
+                <div className="col-span-3 row-span-1 flex flex-col w-full rounded-md border-2 gap-[1vh]" >
                     <p className="pl-3 pt-1.5 font-semibold">Comments</p>
                     <Comment className="w-full" img='/next.png' name="ss" time="ssss" />
-                    <Comment className="w-full" name="ss" time="ssss" />
-                    <Comment className="w-full" name="ss" time="ssss" />
-                    <Comment className="w-full" name="ss" time="ssss" />
+                    <Comment className="w-full" img='/next.png' name="ss" time="ssss" />
+                    <Comment className="w-full" img='/next.png' name="ss" time="ssss" />
+                    <Comment className="w-full" img='/next.png' name="ss" time="ssss" />
                     <div className="grid grid-cols-4 mt-auto  h-[5vh] w-full">
                         <div className="col-span-3 m-1">
                             <input className='w-full border-2 rounded-md h-full pl-2' placeholder="Leave a comment..." type="text" />

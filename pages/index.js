@@ -62,23 +62,23 @@ export default function Home({ countryOptions }) {
         <div className='flex flex-col gap-[2vw] self-center w-[80%]'>
           <h1 className='text-[4vh] lg:text-[3rem] lg:w-[60%] text-white'>Set off your nomad life at minimal cost with our legal support.</h1>
 
-          <form onSubmit={onSubmit} className='relative hidden lg:flex justify-center bg-[#13334C] h-[25vh] p-[2rem] gap-[4rem] rounded-lg'>
+          <form onSubmit={onSubmit} className='relative hidden lg:flex justify-evenly bg-[#13334C] h-[25vh] p-[2rem] gap-[4rem] rounded-lg'>
             <div className='flex flex-col justify-center gap-[.5rem]'>
               <label className='text-white'>Nationality</label>
-              <Select onChange={onCountryOriginsChange} className='w-[12.5vw]' options={countryOrigins} />
+              <Select onChange={onCountryOriginsChange} className='w-[20vw]' options={countryOrigins} />
             </div>
             <div className='flex flex-col justify-center gap-[.5rem]'>
               <label className='text-white'>Destination</label>
-              <Select ref={destinationInputRef} onChange={onCountryDestinationChange} className='w-[12.5vw]' options={countryDestinations} />
+              <Select ref={destinationInputRef} onChange={onCountryDestinationChange} className='w-[20vw]' options={countryDestinations} />
             </div>
             {/* <div className='flex flex-col justify-center gap-[.5rem]'>
               <label>Stay duration</label>
               <input className='w-full bg-[#13334C] border-2 rounded-md py-[.2rem] px-[.6rem]' onChange={event => setStayDuration(event.target.value)} type="text" />
             </div> */}
-            <div className='flex flex-col justify-center gap-[.5rem] text-white'>
+            {/* <div className='flex flex-col justify-center gap-[.5rem] text-white'>
               <label className=''>Job type</label>
               <input className='w-[12.5vw] bg-[#13334C] border-2 rounded-md py-[.2rem] px-[.6rem]' onChange={event => setJobType(event.target.value)} type="text" />
-            </div>
+            </div> */}
             <div className='flex flex-col justify-center gap-[.5rem] text-white'>
               <button className='w-full bg-[#FD5F00] py-[1vw] px-[3vw] rounded-lg'>Search</button>
             </div>
