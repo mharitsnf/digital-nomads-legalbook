@@ -23,9 +23,7 @@ export default function Home({ countryOptions }) {
   const onSubmit = (event) => {
     event.preventDefault()
 
-    console.log(nationality, destination, jobType)
-
-    if (!jobType) {
+    if (!nationality || !destination) {
       toast.error("Please fill all the forms!")
       return
     }
@@ -34,7 +32,6 @@ export default function Home({ countryOptions }) {
   }
 
   const onCountryOriginsChange = (newVal) => {
-    console.log(newVal.value)
     setNationality(newVal.value)
 
     destinationInputRef.current.clearValue()
@@ -43,12 +40,15 @@ export default function Home({ countryOptions }) {
       return { value: item['Country B'], label: item['Country B'] }
     })
     setCountryDestinations(newCDests)
+
+    console.log(nationality, destination)
   }
 
   const onCountryDestinationChange = (newVal) => {
     if (newVal) {
       setDestination(newVal.value)
     }
+
   }
 
   return (
