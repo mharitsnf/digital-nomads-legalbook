@@ -7,6 +7,7 @@ import Footer from "../../components/footer"
 import Comment from "../../components/comment"
 import Consultant from "../../components/consultant"
 import Recommendation from "../../components/recommendation"
+
 export default function InformationPage({ relationshipData }) {
     const router = useRouter()
     const { nationality, destination, jobType } = router.query
@@ -94,7 +95,6 @@ export default function InformationPage({ relationshipData }) {
 
 export async function getServerSideProps(context) {
     const { nationality, destination, jobType } = context.query
-    // console.log(nationality, destination, jobType)
 
     const relationshipData = relationship.find(rel => rel["Country A"] === nationality && rel["Country B"] === destination)
 

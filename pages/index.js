@@ -10,21 +10,23 @@ import { countries, relationship } from "../data/data"
 import Select from 'react-select'
 import toast, { Toaster } from 'react-hot-toast';
 
-export default function Home({ countryOptions }) {
+export default function Home({ countryOptions, jobOptions }) {
   const router = useRouter()
-  const destinationInputRef = useRef()
   const [nationality, setNationality] = useState('')
   const [destination, setDestination] = useState('')
-  // const [stayDuration, setStayDuration] = useState('')
   const [jobType, setJobType] = useState('')
-  const [countryOrigins, setCountryOrigins] = useState(countryOptions)
-  const [countryDestinations, setCountryDestinations] = useState([])
 
   const onSubmit = (event) => {
     event.preventDefault()
 
-    if (!nationality || !destination) {
+    if (!nationality || !destination || !jobType) {
       toast.error("Please fill all the forms!")
+      return
+    }
+
+    const relationshipData = relationship.find(rel => rel["Country A"] === nationality && rel["Country B"] === destination)
+    if (!relationshipData) {
+      router.push(`/404/`)
       return
     }
 
@@ -33,22 +35,14 @@ export default function Home({ countryOptions }) {
 
   const onCountryOriginsChange = (newVal) => {
     setNationality(newVal.value)
-
-    destinationInputRef.current.clearValue()
-    let newCDests = relationship.filter(item => item['Country A'] === newVal.value)
-    newCDests = newCDests.map(item => {
-      return { value: item['Country B'], label: item['Country B'] }
-    })
-    setCountryDestinations(newCDests)
-
-    console.log(nationality, destination)
   }
 
   const onCountryDestinationChange = (newVal) => {
-    if (newVal) {
-      setDestination(newVal.value)
-    }
+    setDestination(newVal.value)
+  }
 
+  const onJobtypeChange = (newVal) => {
+    setJobType(newVal.value)
   }
 
   return (
@@ -65,20 +59,16 @@ export default function Home({ countryOptions }) {
           <form onSubmit={onSubmit} className='relative hidden lg:flex justify-evenly bg-[#13334C] h-[25vh] p-[2rem] gap-[4rem] rounded-lg'>
             <div className='flex flex-col justify-center gap-[.5rem]'>
               <label className='text-white'>Nationality</label>
-              <Select onChange={onCountryOriginsChange} className='w-[20vw]' options={countryOrigins} />
+              <Select onChange={onCountryOriginsChange} className='w-[12.5vw]' options={countryOptions} />
             </div>
             <div className='flex flex-col justify-center gap-[.5rem]'>
               <label className='text-white'>Destination</label>
-              <Select ref={destinationInputRef} onChange={onCountryDestinationChange} className='w-[20vw]' options={countryDestinations} />
+              <Select onChange={onCountryDestinationChange} className='w-[12.5vw]' options={countryOptions} />
             </div>
-            {/* <div className='flex flex-col justify-center gap-[.5rem]'>
-              <label>Stay duration</label>
-              <input className='w-full bg-[#13334C] border-2 rounded-md py-[.2rem] px-[.6rem]' onChange={event => setStayDuration(event.target.value)} type="text" />
-            </div> */}
-            {/* <div className='flex flex-col justify-center gap-[.5rem] text-white'>
-              <label className=''>Job type</label>
-              <input className='w-[12.5vw] bg-[#13334C] border-2 rounded-md py-[.2rem] px-[.6rem]' onChange={event => setJobType(event.target.value)} type="text" />
-            </div> */}
+            <div className='flex flex-col justify-center gap-[.5rem]'>
+              <label className='text-white'>Job type</label>
+              <Select onChange={onJobtypeChange} className='w-[12.5vw]' options={jobOptions} />
+            </div>
             <div className='flex flex-col justify-center gap-[.5rem] text-white'>
               <button className='w-full bg-[#FD5F00] py-[1vw] px-[3vw] rounded-lg'>Search</button>
             </div>
@@ -98,9 +88,20 @@ export async function getServerSideProps() {
     return { value: item, label: item }
   })
 
+  const jobOptions = [
+    { value: "Software Engineer", label: "Software Engineer" },
+    { value: "Freelancer", label: "Freelancer" },
+    { value: "UI/UX", label: "UI/UX" },
+    { value: "Data Scientist", label: "Data Scientist" },
+    { value: "Product Manager", label: "Product Manager" },
+    { value: "Data Analyst", label: "Data Analyst" },
+    { value: "Consultant", label: "Consultant" },
+  ]
+
   return {
     props: {
-      countryOptions
+      countryOptions,
+      jobOptions
     }
   }
 }
