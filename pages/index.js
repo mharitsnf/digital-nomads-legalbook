@@ -60,7 +60,7 @@ export default function Home({ countryOptions }) {
       <div className='h-[80vh] w-full flex justify-center flex-col bg-[url("/home-wallpaper.png")] bg-no-repeat bg-cover bg-center'>
 
         <div className='flex flex-col gap-[2vw] self-center w-[80%]'>
-          <h1 className='text-[4vh] lg:text-[3rem] lg:w-[60%] text-white'>Set off your nomad life at minimal cost with our legal support.</h1>
+          <h1 className='text-[4vh] font-semibold lg:text-[3rem] lg:w-[60%] text-white'>Set off your nomad life at minimal cost with our legal support.</h1>
 
           <form onSubmit={onSubmit} className='relative hidden lg:flex justify-evenly bg-[#13334C] h-[25vh] p-[2rem] gap-[4rem] rounded-lg'>
             <div className='flex flex-col justify-center gap-[.5rem]'>
