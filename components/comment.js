@@ -10,7 +10,7 @@ export default function Comment({img, name, time, comment}) {
                     <div className="col-span-1 h-full flex self-center content-center items-center">
                         <p className="text-[1vh] font-bold">{name}</p>
                     </div>
-                    <div className="col-start-3 col-span-1 h-full flex justify-self-end self-center content-center items-center">
+                    <div className="col-start-3 col-span-1 h-full flex justify-self-end self-center text-gray-400 content-center items-center">
                         <p className="text-[1vh]">{time}</p>
                     </div>
                 </div>
