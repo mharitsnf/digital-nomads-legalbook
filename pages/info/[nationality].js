@@ -96,7 +96,9 @@ export default function InformationPage({ relationshipData }) {
 export async function getServerSideProps(context) {
     const { nationality, destination, jobType } = context.query
 
-    const relationshipData = relationship.find(rel => rel["Country A"] === nationality && rel["Country B"] === destination)
+    let relationshipData = relationship.find(rel => rel["Country A"] === nationality && rel["Country B"] === destination)
+
+    if (!relationshipData) relationshipData = relationship.find(rel => rel["Country A"] === destination && rel["Country B"] === nationality)
 
     return {
         props: { relationshipData }
