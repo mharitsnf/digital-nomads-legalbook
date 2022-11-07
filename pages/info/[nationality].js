@@ -51,11 +51,11 @@ export default function InformationPage({ relationshipData }) {
                                 <p className="font-semibold underline text-blue-500">more</p>
                             </div>
                             <div className="flex flex-row justify-between pl-10 pr-10 pt-3 pb-3 h-full">
-                                <Consultant className="h-full" img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
-                                <Consultant img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
-                                <Consultant img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
-                                <Consultant img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
-                                <Consultant img='/next.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                                <Consultant className="h-full" img='/profile.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                                <Consultant img='/profile.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                                <Consultant img='/profile.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                                <Consultant img='/profile.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
+                                <Consultant img='/profile.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
                             </div>
                         </div>
                     </div>
