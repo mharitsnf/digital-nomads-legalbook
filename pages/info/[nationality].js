@@ -46,12 +46,12 @@ export default function InformationPage({ relationshipData }) {
                             <h1 className="lg:text-[1.5vw] font-semibold">Taxation</h1>
                             <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
                         </div>
-                        <div className="h-[25vh] w-auto flex flex-col w-full rounded-md border-2 m-5">
+                        <div className="h-[30vh] w-auto flex flex-col w-full rounded-md border-2 m-5">
                             <div className="flex flex-row my-2 mx-4 justify-between">
                                 <p className="font-semibold">Consultants</p>
                                 <p className="font-semibold underline text-blue-500">more</p>
                             </div>
-                            <div className="flex flex-row justify-between pl-10 pr-10 pt-3 pb-3 h-full">
+                            <div className="flex flex-row justify-between pl-10 pr-10 pb-3 h-full">
                                 <Consultant className="h-full" img='/profile.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
                                 <Consultant img='/profile.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
                                 <Consultant img='/profile.png' name="mike" phone="+46705555" email="mikess2@gmail.com" />
