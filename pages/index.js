@@ -24,18 +24,6 @@ export default function Home({ countryOptions, jobOptions }) {
       return
     }
 
-    console.log(nationality, destination)
-
-    let relationshipData = relationship.find(rel => rel["Country A"] === nationality && rel["Country B"] === destination)
-    if (!relationshipData) {
-      relationshipData = relationship.find(rel => rel["Country A"] === destination && rel["Country B"] === nationality)
-
-      if (!relationshipData) {
-        router.push(`/404/`)
-        return
-      }
-    }
-
     router.push(`/info/${nationality}?destination=${destination}&jobType=${jobType}`)
   }
 

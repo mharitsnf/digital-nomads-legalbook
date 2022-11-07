@@ -8,6 +8,19 @@ import Comment from "../../components/comment"
 import Consultant from "../../components/consultant"
 import Recommendation from "../../components/recommendation"
 
+
+function LoremIpsum({ relationshipData }) {
+    return (
+        <p>The relationship between {relationshipData["Country A"]} and {relationshipData["Country B"]} was established in {relationshipData["Effective"]}. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+    )
+}
+
+function NotFound({ countryA, countryB }) {
+    return (
+        <p>The relationship between {countryA} and {countryB} doesn't exist.</p>
+    )
+}
+
 export default function InformationPage({ relationshipData }) {
     const router = useRouter()
     const { nationality, destination, jobType } = router.query
@@ -35,16 +48,28 @@ export default function InformationPage({ relationshipData }) {
                 <div className="col-span-9 flex flex-col gap-[5vh]">
                     <div className="flex flex-col">
                         <h1 className="lg:text-[1.5vw] font-semibold">{destination}</h1>
-                        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet L ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsumorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                        {
+                            !relationshipData ?
+                                <NotFound countryA={nationality} countryB={destination} /> :
+                                <LoremIpsum relationshipData={relationshipData} />
+                        }
                     </div>
                     <div className="flex flex-col">
                         <h1 className="lg:text-[1.5vw] font-semibold">Digital Nomad Visa</h1>
-                        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                        {
+                            !relationshipData ?
+                                <NotFound countryA={nationality} countryB={destination} /> :
+                                <LoremIpsum relationshipData={relationshipData} />
+                        }
                     </div>
                     <div className="flex flex-col gap-[5vh]">
                         <div>
                             <h1 className="lg:text-[1.5vw] font-semibold">Taxation</h1>
-                            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                            {
+                                !relationshipData ?
+                                    <NotFound countryA={nationality} countryB={destination} /> :
+                                    <LoremIpsum relationshipData={relationshipData} />
+                            }
                         </div>
                         <div className="h-[30vh] w-auto flex flex-col w-full rounded-md border-2 m-5">
                             <div className="flex flex-row my-2 mx-4 justify-between">
@@ -99,6 +124,7 @@ export async function getServerSideProps(context) {
     let relationshipData = relationship.find(rel => rel["Country A"] === nationality && rel["Country B"] === destination)
 
     if (!relationshipData) relationshipData = relationship.find(rel => rel["Country A"] === destination && rel["Country B"] === nationality)
+    if (!relationshipData) relationshipData = null
 
     return {
         props: { relationshipData }
