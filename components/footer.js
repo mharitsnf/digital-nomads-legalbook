@@ -2,10 +2,10 @@ export default function Footer() {
 
     return (
         <div className="grid grid-cols-12 h-[10vh] w-full justify-items-center content-center drop-shadow-lg">
-            <div className="col-span-2">
-                <div className="flex flex-col self-center">
-                    <img src='/bookLogo.png' alt="logo" className="img-responsive h-[6vh] object-contain" />
-                    <p className="font-semibold">© 2022 Digital Nomad Legalbook</p>
+            <div className="col-span-3 flex">
+                <div className="flex flex-row self-center">
+                    <img src='/bookLogo.png' alt="logo" className="img-responsive h-[3vh] object-contain self-center"  />
+                    <p className="pl-3 self-center font-semibold">© 2022 Digital Nomad Legalbook</p>
                 </div>
 
             </div>
